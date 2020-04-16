@@ -33,11 +33,14 @@
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
 									<li class="active"><a href="{% static 'index.html'}">Home</a></li>
-									<li><a href="about.html">About us</a></li>
+									<li><a href="aboutus/about">About us</a></li>
+									{%if user.is_authenticated%}
+									<li><a href="#">Hello {{user.first_name}}</a></li>
+									<li><a href="accounts/logout">Logout</a></li>
+									{%else%}
 									<li><a href="#">Login</a></li>
 									<li><a href="accounts/regester">Register</a></li>
-									<li><a href="accounts/regester">Register</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									{%endif%}
 								</ul>
 							</nav>
 							<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
