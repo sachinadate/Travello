@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>hello world {{name}}</h1>
+<form action='add' method="POST">
+    {% csrf_token %}
+    enter 1 st number <input type="text" name='num1'><br>
+    enter 2 nd number <input type="text" name='num2'><br>
+    <input type="radio" name="radio" value="Radio 1">Radio 1
+    <input type="radio" name="radio" value="Radio 2">Radio 2
+    <input type="radio" name="radio" value="Radio 3">Radio 3
+    <input type="submit">
+</form>
+{% endblock %}   
